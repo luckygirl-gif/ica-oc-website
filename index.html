@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ICA at Orange County — Personalized Learning Solution</title>
+<meta name="description" content="Premium 1:1 personalized education at ICA at Orange County. Lessons that begin with your child, not the curriculum." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&family=Lora:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/jpeg" href="assets/logo.jpg" />
+<link rel="stylesheet" href="assets/styles.css?v=29" />
+</head>
+<body data-lang="en">
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.jpg" alt="ICA logo" />
+      <span style="line-height:1.15"><b>ICA</b><span>at Orange County</span></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" data-page="index.html" data-en="Home" data-ko="홈">Home</a>
+      <a href="about.html" data-page="about.html" data-en="About" data-ko="소개">About</a>
+      <a href="programs.html" data-page="programs.html" data-en="Programs" data-ko="프로그램">Programs</a>
+      <a href="contact.html" data-page="contact.html" data-en="Contact" data-ko="문의">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button id="enBtn" class="active" onclick="setLang('en')">EN</button>
+        <button id="koBtn" onclick="setLang('ko')">한국어</button>
+      </div>
+      <a href="contact.html" class="btn" data-en="Inquire" data-ko="상담 문의">Inquire</a>
+      <button class="menu-btn" aria-label="menu" onclick="toggleMenu()">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-center">
+      <span class="tagline" data-en="Personalized Learning Solution" data-ko="오직 내 아이의 속도와 결에 맞춘 진단적 수업">Personalized Learning Solution</span>
+      <h1>
+        <span data-en="Lessons that begin with " data-ko="ICA의 수업은<br>">Lessons that begin with </span><span class="accent" data-en="your child" data-ko="아이">your child</span><span data-en=", not the curriculum." data-ko="로부터,<br>관찰로부터 시작됩니다.">, not the curriculum.</span>
+      </h1>
+      <p class="sub" data-en="ICA at OC is a premium, personalized academy. We read the child before we teach: how they think, where their thinking pauses, and what they need at this very moment. Then we design a lesson that exists only for them."
+         data-ko="ICA at OC는 아이의 학습 습관을 세심하게 살피고,<br>아이가 문제를 대하고 사고하는 방식을 깊이 관찰한 뒤,<br>겉으로 드러난 결과 이면의 진짜 원인을 찾아내어<br>아이의 현재 위치와 성장 속도에 맞춰 배움의 방향을 함께 만들어 갑니다.">ICA at OC is a premium, personalized academy. We read the child before we teach: how they think, where their thinking pauses, and what they need at this very moment. Then we design a lesson that exists only for them.</p>
+      <div class="hero-cta">
+        <a href="programs.html" class="btn" data-en="Explore programs" data-ko="프로그램 보기">Explore programs</a>
+        <a href="about.html" class="btn ghost" data-en="See our approach" data-ko="교육 철학 보기">See our approach</a>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <div class="hero-card-h" data-en="Programs at a glance" data-ko="ICA 프로그램 한눈에 보기">Programs at a glance</div>
+      <ul class="prog-list">
+        <li><span class="nm">Research &amp; Presentation</span><em class="tg" data-en="9 wks" data-ko="9주 시즌제">9 wks</em></li>
+        <li><span class="nm">Story Writing &amp; Publishing</span><em class="tg" data-en="9 wks" data-ko="9주 시즌제">9 wks</em></li>
+        <li><span class="nm">Analytical Book Reading</span><em class="tg" data-en="Year-round" data-ko="연중 운영">Year-round</em></li>
+        <li><span class="nm">Temperament &amp; Character</span><em class="tg p" data-en="1:1" data-ko="1:1 프리미엄">1:1</em></li>
+        <li><span class="nm">Homeschooling Design</span><em class="tg p" data-en="1:1" data-ko="1:1 프리미엄">1:1</em></li>
+        <li><span class="nm">IEP Review / Consulting</span><em class="tg p" data-en="1:1" data-ko="1:1 프리미엄">1:1</em></li>
+      </ul>
+      <a class="hero-card-link" href="programs.html" data-en="See all programs →" data-ko="전체 프로그램 보기 →">See all programs →</a>
+    </aside>
+  </div>
+</section>
+
+<!-- DIFFERENCE -->
+<section id="difference">
+  <div class="wrap">
+    <div class="center">
+      <div class="eyebrow" data-en="The ICA Difference" data-ko="ICA가 교육을 대하는 방식">The ICA Difference</div>
+      <h2 class="section-title" data-en="We don't treat the symptom. We target the root cause." data-ko="드러난 결과가 아닌, 숨겨진 원인에 집중합니다.">We don't treat the symptom. We target the root cause.</h2>
+      <p class="section-lead" data-en="Scores merely record past results. A child's behavioral patterns reveal the true cause. Every ICA lesson starts there." data-ko="점수는 이미 지나간 결과를 기록할 뿐입니다. 성장을 가로막는 진짜 원인은 아이의 작은 행동과 사고 패턴 속에 숨어 있습니다. ICA의 모든 수업은 바로 그 지점을 관찰하는 데서 시작됩니다.">Scores merely record past results. A child's behavioral patterns reveal the true cause. Every ICA lesson starts there.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal"><div class="ic">🔍</div><h3 data-en="Observation first" data-ko="먼저, 아이를 관찰합니다">Observation first</h3><p data-en="Lessons begin with the child, not the curriculum. Before deciding what to teach, we precisely read how each child thinks, learns, and responds." data-ko="ICA는 무엇을 가르칠지 정하기 전에 아이를 먼저 정밀하게 읽어냅니다. 아이가 문제를 읽고, 생각하고, 답을 만들어 가는 과정을 살펴보는 데서 수업이 시작됩니다.">Lessons begin with the child, not the curriculum. Before deciding what to teach, we precisely read how each child thinks, learns, and responds.</p></div>
+      <div class="pillar reveal"><div class="ic">🎯</div><h3 data-en="The root cause" data-ko="증상이 아닌 원인을 다룹니다">The root cause</h3><p data-en="What a child needs is not more, but more precisely. We look past the visible symptoms and target the true cause that created them." data-ko="무작정 연습량을 늘리지 않습니다. 잦은 실수나 회피 같은 겉모습 너머, 그것을 유발한 본질적인 원인을 찾아 바로잡습니다.">What a child needs is not more, but more precisely. We look past the visible symptoms and target the true cause that created them.</p></div>
+      <div class="pillar reveal"><div class="ic">🧠</div><h3 data-en="Understanding over speed" data-ko="진도보다 완전한 이해">Understanding over speed</h3><p data-en="The pace is set entirely by the child's understanding, never by a syllabus. We take the next step only when they can explain it clearly on their own." data-ko="수업의 속도는 선생님의 진도표가 아니라, 오직 아이의 이해가 결정합니다. 아이가 스스로 막힘없이 설명할 수 있을 때 비로소 다음 단계로 나아갑니다.">The pace is set entirely by the child's understanding, never by a syllabus. We take the next step only when they can explain it clearly on their own.</p></div>
+      <div class="pillar reveal"><div class="ic">🛡️</div><h3 data-en="Fortifying the inner self" data-ko="배움에 대한 자신감을 함께 키웁니다">Fortifying the inner self</h3><p data-en="A failure in learning is never a failure of the child. We plant confidence deep enough that a setback cannot break it." data-ko="한 번의 실수나 낮은 점수가 아이를 설명하지 않습니다. 실패를 두려워하지 않고 다시 시도할 수 있는 힘을 함께 키웁니다.">A failure in learning is never a failure of the child. We plant confidence deep enough that a setback cannot break it.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <h2 data-en="Every child is different. Their lesson must be too." data-ko="아이마다 배우는 방식이 다릅니다. ICA 수업도 아이마다 달라집니다.">Every child is different. Their lesson must be too.</h2>
+      <p data-en="Tell us a little about your child. We'll show you what a lesson that exists only for them looks like." data-ko="자녀의 현재 모습과 고민을 알려 주세요. 그 아이에게 꼭 맞는 배움이 어떤 모습일지 함께 살펴보고, 수업의 방향을 제안해 드립니다.">Tell us a little about your child. We'll show you what a lesson that exists only for them looks like.</p>
+      <a href="contact.html" class="btn" data-en="Inquire about a place" data-ko="상담 문의하기">Inquire about a place</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.jpg" alt="ICA" style="width:36px;height:36px;border-radius:8px" />
+      <span style="line-height:1.15"><b>International Christian Academy</b><span>at Orange County</span></span>
+    </a>
+    <nav class="foot-links">
+      <a href="index.html" data-en="Home" data-ko="홈">Home</a>
+      <a href="about.html" data-en="About" data-ko="소개">About</a>
+      <a href="programs.html" data-en="Programs" data-ko="프로그램">Programs</a>
+      <a href="contact.html" data-en="Contact" data-ko="문의">Contact</a>
+      <a href="https://www.instagram.com/ica.oc_official/" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+    <div>© 2026 ICA at OC · <a href="https://www.instagram.com/ica.oc_official/" target="_blank" rel="noopener" style="color:var(--coral-deep);font-weight:600"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="vertical-align:-2px;margin-right:4px"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>@ICA.OC_OFFICIAL</a></div>
+  </div>
+</footer>
+
+<script src="assets/app.js?v=29"></script>
+</body>
+</html>

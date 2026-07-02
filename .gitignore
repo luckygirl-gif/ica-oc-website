@@ -1,0 +1,8 @@
+# private working files — never publish
+_shots/
+assets/kei.png
+assets/yuna.png
+assets/instagram/
+assets/labs/
+*.md
+.DS_Store
