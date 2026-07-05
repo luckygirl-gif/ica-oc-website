@@ -50,6 +50,7 @@ document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 // Runs on load, resize, font load, and language switch — so it self-corrects on any
 // monitor/device without hiding, clipping, or scaling any real content.
 (function(){
+  function topOf(el){ return el.getBoundingClientRect().top + window.scrollY; }
   function bottomOf(el){ return el.getBoundingClientRect().bottom + window.scrollY; }
   function fitTarget(){
     var pg = document.querySelector('.page-programs .prog-grid .pillar'); // programs: 1st lab row
@@ -63,11 +64,56 @@ document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
     if(hc && ce) return bottomOf(hc) >= bottomOf(ce) ? hc : ce;    // fit its tallest child
     return hc || ce;
   }
-  var fillSec = null;                          // section currently carrying fill padding
+  var fillSec = null;                          // section currently carrying fill padding-bottom
+  var padSec = null;                           // section currently carrying snap padding-top
+  // Programs: the 8-card grid is taller than one screen, so the fold lands INSIDE
+  // the grid — section-level fill can't help there. Instead we snap the fold to a
+  // card-ROW boundary: find the first row that would be cut and pad the section's
+  // top so that row starts EXACTLY at the fold. Rows above stay fully visible; the
+  // cut row is fully hidden. Pure measurement — holds on any monitor/language.
+  function cleanFoldPrograms(){
+    var sec = document.querySelector('.page-programs .programs-section');
+    if(!sec) return false;
+    var H = window.innerHeight;
+    var rows = [];                             // one {top,bottom} per visual card row
+    sec.querySelectorAll('.pillar').forEach(function(p){
+      var t = topOf(p), b = bottomOf(p), r = rows[rows.length-1];
+      if(r && Math.abs(r.top - t) < 4){ r.bottom = Math.max(r.bottom, b); }
+      else rows.push({top:t, bottom:b});
+    });
+    for(var i = 0; i < rows.length; i++){
+      if(rows[i].bottom > H){                  // first row that doesn't fully fit
+        var pad = H - rows[i].top;             // push its top exactly to the fold
+        if(pad > 0){
+          sec.style.paddingTop = (parseFloat(getComputedStyle(sec).paddingTop) || 0) + pad + 'px';
+          padSec = sec;
+        }
+        return true;
+      }
+    }
+    var how = document.getElementById('how');  // every card row fits (tall screen):
+    if(how){                                   // make the next section start at the fold
+      var t = topOf(how);
+      if(t < H){
+        sec.style.paddingBottom = (parseFloat(getComputedStyle(sec).paddingBottom) || 0) + (H - t) + 'px';
+        fillSec = sec;
+      }
+    }
+    return true;
+  }
+  // Measure LAYOUT truth: .reveal cards sit 24px low (translateY) until their
+  // entrance animation runs, and fit() can fire mid-animation (fonts.ready,
+  // resize). html.measuring zeroes those transforms so every measurement inside
+  // fitPass reads the resting position — never a mid-flight one.
   function fit(){
     var root = document.documentElement;
+    root.classList.add('measuring');
+    try{ fitPass(root); } finally{ root.classList.remove('measuring'); }
+  }
+  function fitPass(root){
     root.style.setProperty('--fit','1');
     if(fillSec){ fillSec.style.paddingBottom = ''; fillSec = null; }
+    if(padSec){ padSec.style.paddingTop = ''; padSec = null; }
     if(window.innerWidth <= 980) return;      // tablet/mobile: natural flow, scrolling is fine
     var el = fitTarget(); if(!el) return;      // pages with no strict first-viewport block
     var limit = window.innerHeight - 18;       // keep an 18px breathing margin
@@ -86,6 +132,7 @@ document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
         }
       }                                        // else: impossible even fully compact — stay at 0
     }
+    if(cleanFoldPrograms()) return;            // programs: fold snaps to a card-row boundary
     // TOO SHORT → FILL: pad the first-screen section so the NEXT section starts
     // exactly at the fold. The first screen always ends right below its content —
     // nothing ever peeks in half-cut, on any viewport, either language.

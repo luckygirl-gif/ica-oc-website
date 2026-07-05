@@ -20,10 +20,10 @@ a{color:inherit;text-decoration:none}
    JS measures the real first-viewport block and lowers --fit only as much as needed,
    so the layout self-corrects on ANY monitor/device, both languages. */
 html{--vhx:clamp(0px, calc((100vh - 768px) * 0.6), 100px);--fit:1}
-section{padding:calc(10px + (14px + var(--vhx)*0.26)*var(--fit)) 0}
+section{padding:calc(6px + (18px + var(--vhx)*0.26)*var(--fit)) 0}
 .eyebrow{font-size:.8rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--coral-deep);margin-bottom:calc(6px + 8px*var(--fit))}
 html[data-lang="ko"] .eyebrow{letter-spacing:.05em;text-transform:none}
-h2.section-title{font-size:clamp(1.45rem,2.8vw,2rem);font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:calc(8px + 8px*var(--fit));letter-spacing:-.01em}
+h2.section-title{font-size:clamp(1.45rem,2.8vw,2rem);font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:calc(6px + 10px*var(--fit));letter-spacing:-.01em}
 .section-lead{font-size:calc(1rem + .08rem*var(--fit));line-height:calc(1.4 + .25*var(--fit));color:var(--muted);max-width:640px}
 .center{text-align:center}
 .center .section-lead{margin-left:auto;margin-right:auto}
@@ -148,6 +148,7 @@ html[data-lang="ko"] .en-only{display:none}
 /* reveal */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
+html.measuring .reveal{transform:none!important;transition:none!important}
 
 @media(max-width:900px){
   .hero-cta{justify-content:center}
@@ -203,8 +204,8 @@ html[data-lang="ko"] .en-only{display:none}
 .page-programs .page-hero h1{margin-bottom:calc(2px + (2px + var(--vhx)*0.05)*var(--fit))}
 .programs-section{padding-top:calc(3px + (3px + var(--vhx)*0.06)*var(--fit));padding-bottom:clamp(28px,4.5vh,52px)}
 .prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:calc(10px + (2px + var(--vhx)*0.10)*var(--fit));margin-top:calc(5px + (3px + var(--vhx)*0.08)*var(--fit))}
-.prog-grid .pillar{padding:calc(9px + (3px + var(--vhx)*0.13)*var(--fit)) 20px}
-.prog-grid .pillar p{line-height:calc(1.38 + .12*var(--fit))}
+.prog-grid .pillar{padding:calc(7px + (5px + var(--vhx)*0.13)*var(--fit)) 20px}
+.prog-grid .pillar p{line-height:calc(1.35 + .15*var(--fit))}
 .prog-grid .prog-head{margin-bottom:calc(4px + (2px + var(--vhx)*0.05)*var(--fit))}
 .prog-grid .pillar h3{margin-bottom:calc(2px + (1px + var(--vhx)*0.03)*var(--fit))}
 .prog-grid.labs{grid-template-columns:repeat(2,1fr)}
