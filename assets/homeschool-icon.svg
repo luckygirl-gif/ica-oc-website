@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- house outline: walls + roof, open at the bottom where the book sits -->
+  <path d="M29 70 L29 45 L61 19 L93 45 L93 70" fill="none" stroke="#2d3282" stroke-width="6" stroke-linejoin="miter"/>
+  <!-- chimney on the right slope -->
+  <path d="M78 24 h12 v18 l-12 -10 z" fill="#2d3282"/>
+  <!-- 2x2 window -->
+  <g fill="#a59aa8">
+    <rect x="49" y="41" width="11" height="11"/>
+    <rect x="63" y="41" width="11" height="11"/>
+    <rect x="49" y="55" width="11" height="11"/>
+    <rect x="63" y="55" width="11" height="11"/>
+  </g>
+  <!-- open book: light blue inner pages -->
+  <path d="M60 84 C50 72 34 67 21 69 C34 61 52 66 60 78 Z" fill="#d6e8f7"/>
+  <path d="M60 84 C70 72 86 67 99 69 C86 61 68 66 60 78 Z" fill="#d6e8f7"/>
+  <!-- navy covers -->
+  <path d="M60 101 C48 88 30 82 13 84 L16 72 C34 70 52 78 60 89 Z" fill="#2d3282"/>
+  <path d="M60 101 C72 88 90 82 107 84 L104 72 C86 70 68 78 60 89 Z" fill="#2d3282"/>
+  <!-- coral V bookmark rising from the center fold -->
+  <path d="M60 96 C58 86 53 78 47 73 C54 75 58 82 60 87 C62 82 66 75 73 73 C67 78 62 86 60 96 Z" fill="#e8967a"/>
+</svg>
