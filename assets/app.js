@@ -120,30 +120,48 @@ document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
     root.classList.add('measuring');
     try{ fitPass(root); } finally{ root.classList.remove('measuring'); }
   }
+  // Compress spacing until el's bottom fits above limit. Overflow is ~linear in
+  // --fit, so we solve directly, then nudge for line-wrap nonlinearity. Returns
+  // true if el fits (possibly after compression), false if impossible at fit=0.
+  function solveFit(root, el, limit){
+    var over1 = bottomOf(el) - limit;
+    if(over1 <= 0) return true;                // already fits at current fit
+    root.style.setProperty('--fit','0');
+    var over0 = bottomOf(el) - limit;
+    if(over0 > 0) return false;                // impossible even fully compact
+    var f = -over0 / (over1 - over0);          // linear solve: overflow(f) = 0
+    f = Math.max(0, Math.min(1, f - 0.03));
+    root.style.setProperty('--fit', f.toFixed(3));
+    var guard = 0;                             // line wraps can bend the line — verify & nudge
+    while(bottomOf(el) > limit && f > 0 && guard < 20){
+      f = Math.max(0, f - 0.05); guard++;
+      root.style.setProperty('--fit', f.toFixed(3));
+    }
+    return true;
+  }
   function fitPass(root){
     root.style.setProperty('--fit','1');
     if(fillSec){ fillSec.style.paddingBottom = ''; fillSec = null; }
     if(padHero){ padHero.style.paddingTop = ''; padHero.style.paddingBottom = ''; padHero = null; }
     if(padSec){ padSec.style.paddingTop = ''; padSec = null; }
     if(window.innerWidth <= 980) return;      // tablet/mobile: natural flow, scrolling is fine
-    var el = fitTarget(); if(!el) return;      // pages with no strict first-viewport block
     var limit = window.innerHeight - 18;       // keep an 18px breathing margin
-    var over1 = bottomOf(el) - limit;
-    if(over1 > 0){                             // TOO TALL → compress spacing
-      root.style.setProperty('--fit','0');
-      var over0 = bottomOf(el) - limit;
-      if(over0 <= 0){
-        var f = -over0 / (over1 - over0);      // linear solve: overflow(f) = 0
-        f = Math.max(0, Math.min(1, f - 0.03));
-        root.style.setProperty('--fit', f.toFixed(3));
-        var guard = 0;                         // line wraps can bend the line — verify & nudge
-        while(bottomOf(el) > limit && f > 0 && guard < 20){
-          f = Math.max(0, f - 0.05); guard++;
-          root.style.setProperty('--fit', f.toFixed(3));
-        }
-      }                                        // else: impossible even fully compact — stay at 0
+    // Programs: prefer a KO/EN-consistent first screen of hero + TWO card rows
+    // (4 cards). Compress toward that; only if two rows can't fit even fully
+    // compact, fall back to one comfortable row. Then snap the fold to the next
+    // row boundary either way.
+    var labs = document.querySelectorAll('.page-programs .prog-grid.labs .pillar');
+    if(labs.length){
+      var row2 = labs[2] || labs[0];           // 2-col grid: 3rd card sits in row 2
+      if(!solveFit(root, row2, limit) && labs[0]){
+        root.style.setProperty('--fit','1');   // two rows impossible on this screen:
+        solveFit(root, labs[0], limit);        // give ONE row comfortable spacing
+      }
+      cleanFoldPrograms();
+      return;
     }
-    if(cleanFoldPrograms()) return;            // programs: fold snaps to a card-row boundary
+    var el = fitTarget(); if(!el) return;      // pages with no strict first-viewport block
+    if(!solveFit(root, el, limit)){ /* impossible even fully compact — stay at 0 */ }
     // TOO SHORT → FILL: pad the first-screen section so the NEXT section starts
     // exactly at the fold. The first screen always ends right below its content —
     // nothing ever peeks in half-cut, on any viewport, either language.
