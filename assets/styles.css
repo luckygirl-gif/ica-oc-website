@@ -85,6 +85,7 @@ html[data-lang="ko"] .hero .tagline{letter-spacing:.02em;text-transform:none}
 .prog-meta.premium{color:#fff;background:var(--coral)}
 .prog-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
 .prog-logo{height:20px;width:auto;max-width:42%;object-fit:contain;flex-shrink:1}
+.prog-icon{height:34px;width:34px;object-fit:contain;flex-shrink:0}
 
 /* CTA BAND */
 .cta-band{background:var(--white);border:1px solid rgba(39,42,122,.1);color:var(--ink);border-radius:var(--radius);padding:48px;text-align:center;margin:0 auto;box-shadow:var(--shadow-sm)}
