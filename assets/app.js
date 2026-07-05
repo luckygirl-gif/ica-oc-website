@@ -52,7 +52,7 @@ document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 (function(){
   function bottomOf(el){ return el.getBoundingClientRect().bottom + window.scrollY; }
   function fitTarget(){
-    var pg = document.querySelector('.page-programs .prog-grid');  // programs: all 6 cards
+    var pg = document.querySelector('.page-programs .prog-grid .pillar'); // programs: 1st lab row
     if(pg) return pg;
     if(document.querySelector('.contact-grid'))                    // contact: WHOLE page,
       return document.querySelector('footer');                     // footer included

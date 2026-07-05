@@ -207,5 +207,10 @@ html[data-lang="ko"] .en-only{display:none}
 .prog-grid .pillar p{line-height:calc(1.38 + .12*var(--fit))}
 .prog-grid .prog-head{margin-bottom:calc(4px + (2px + var(--vhx)*0.05)*var(--fit))}
 .prog-grid .pillar h3{margin-bottom:calc(2px + (1px + var(--vhx)*0.03)*var(--fit))}
+.prog-grid.labs{grid-template-columns:repeat(2,1fr)}
+.prog-grid.labs .pillar:nth-child(5){grid-column:1/-1}
+.prog-group-head{margin-top:calc(16px + 20px*var(--fit))}
 @media(max-width:980px){.prog-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:620px){.prog-grid{grid-template-columns:1fr}}
+
+@media(max-width:620px){.prog-grid.labs{grid-template-columns:1fr}.prog-grid.labs .pillar:nth-child(5){grid-column:auto}}
