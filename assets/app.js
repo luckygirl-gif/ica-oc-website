@@ -66,11 +66,13 @@ document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
   }
   var fillSec = null;                          // section currently carrying fill padding-bottom
   var padSec = null;                           // section currently carrying snap padding-top
+  var padHero = null;                          // hero section carrying distributed snap padding
   // Programs: the 8-card grid is taller than one screen, so the fold lands INSIDE
   // the grid — section-level fill can't help there. Instead we snap the fold to a
-  // card-ROW boundary: find the first row that would be cut and pad the section's
-  // top so that row starts EXACTLY at the fold. Rows above stay fully visible; the
-  // cut row is fully hidden. Pure measurement — holds on any monitor/language.
+  // card-ROW boundary: find the first row that would be cut and add exactly enough
+  // space above it that it starts AT the fold. That space is split across the two
+  // seams above the cards (above the hero text / between hero text and the group
+  // eyebrow) so it reads as generous hero breathing, never one awkward hole.
   function cleanFoldPrograms(){
     var sec = document.querySelector('.page-programs .programs-section');
     if(!sec) return false;
@@ -83,10 +85,18 @@ document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
     });
     for(var i = 0; i < rows.length; i++){
       if(rows[i].bottom > H){                  // first row that doesn't fully fit
-        var pad = H - rows[i].top;             // push its top exactly to the fold
+        var pad = H - rows[i].top;             // total push so its top lands on the fold
         if(pad > 0){
-          sec.style.paddingTop = (parseFloat(getComputedStyle(sec).paddingTop) || 0) + pad + 'px';
-          padSec = sec;
+          var hero = document.querySelector('.page-hero');
+          if(hero){
+            var cs = getComputedStyle(hero);
+            hero.style.paddingTop = (parseFloat(cs.paddingTop) || 0) + pad/2 + 'px';
+            hero.style.paddingBottom = (parseFloat(cs.paddingBottom) || 0) + pad/2 + 'px';
+            padHero = hero;
+          }else{
+            sec.style.paddingTop = (parseFloat(getComputedStyle(sec).paddingTop) || 0) + pad + 'px';
+            padSec = sec;
+          }
         }
         return true;
       }
@@ -113,6 +123,7 @@ document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
   function fitPass(root){
     root.style.setProperty('--fit','1');
     if(fillSec){ fillSec.style.paddingBottom = ''; fillSec = null; }
+    if(padHero){ padHero.style.paddingTop = ''; padHero.style.paddingBottom = ''; padHero = null; }
     if(padSec){ padSec.style.paddingTop = ''; padSec = null; }
     if(window.innerWidth <= 980) return;      // tablet/mobile: natural flow, scrolling is fine
     var el = fitTarget(); if(!el) return;      // pages with no strict first-viewport block
