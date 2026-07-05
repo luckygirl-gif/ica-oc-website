@@ -47,6 +47,10 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,249,247,.9);backdrop
 .btn:hover{transform:translateY(-2px);background:var(--coral-deep)}
 .btn.ghost{background:transparent;color:var(--navy);border:1.5px solid rgba(39,42,122,.25);box-shadow:none}
 .btn.ghost:hover{background:var(--navy);color:#fff}
+.insta-btn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:1.5px solid rgba(39,42,122,.25);color:var(--navy);flex:0 0 auto}
+.insta-btn:hover{border-color:var(--coral-deep);color:var(--coral-deep)}
+.hero-insta{display:inline-flex;align-items:center;gap:7px;margin-top:calc(10px + 8px*var(--fit));font-weight:600;font-size:.9rem;color:var(--coral-deep)}
+.hero-insta:hover{text-decoration:underline}
 .menu-btn{display:none;background:none;border:0;cursor:pointer;font-size:1.6rem;color:var(--navy)}
 
 /* PAGE HERO (inner pages) */
