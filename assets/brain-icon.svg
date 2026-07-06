@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- 3D-style brain with check badge and forward arrow, navy + lavender -->
+  <defs>
+    <clipPath id="brainLeft"><rect x="0" y="0" width="60" height="120"/></clipPath>
+  </defs>
+  <g fill="#eceaf3">
+    <circle cx="60" cy="28" r="17"/>
+    <circle cx="42" cy="36" r="19"/>
+    <circle cx="78" cy="36" r="19"/>
+    <circle cx="29" cy="55" r="16"/>
+    <circle cx="91" cy="55" r="16"/>
+    <circle cx="45" cy="66" r="17"/>
+    <circle cx="75" cy="66" r="17"/>
+    <circle cx="60" cy="52" r="24"/>
+  </g>
+  <g fill="#a6a2ba" clip-path="url(#brainLeft)">
+    <circle cx="60" cy="28" r="17"/>
+    <circle cx="42" cy="36" r="19"/>
+    <circle cx="78" cy="36" r="19"/>
+    <circle cx="29" cy="55" r="16"/>
+    <circle cx="91" cy="55" r="16"/>
+    <circle cx="45" cy="66" r="17"/>
+    <circle cx="75" cy="66" r="17"/>
+    <circle cx="60" cy="52" r="24"/>
+  </g>
+  <path d="M44 26 q3 8 -3 13" fill="none" stroke="#8f8ba6" stroke-width="3" stroke-linecap="round"/>
+  <path d="M78 28 q3 8 -3 13" fill="none" stroke="#cfccdd" stroke-width="3" stroke-linecap="round"/>
+  <path d="M52 84 L34 84 A7 7 0 0 0 34 98 L86 98" fill="none" stroke="#a6a2ba" stroke-width="7" stroke-linecap="round"/>
+  <path d="M85 89 L103 98 L85 107 Z" fill="#272a7a"/>
+  <circle cx="58" cy="68" r="16" fill="#272a7a"/>
+  <circle cx="58" cy="68" r="11.5" fill="#fdfdfe"/>
+  <path d="M51.5 68 L56 72.5 L64.5 62.5" fill="none" stroke="#a6a2ba" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
