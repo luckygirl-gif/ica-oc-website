@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- 3D-style target with arrow, brand navy + lavender -->
+  <circle cx="58" cy="64" r="48" fill="#272a7a"/>
+  <circle cx="58" cy="64" r="35" fill="#a6a2ba"/>
+  <circle cx="58" cy="64" r="23" fill="#fdfdfe"/>
+  <circle cx="58" cy="64" r="11" fill="#272a7a"/>
+  <g transform="rotate(-45 58 64)">
+    <rect x="58" y="61.3" width="52" height="5.4" rx="2.7" fill="#c6c3d2"/>
+    <path d="M98 64 L117 52 L110 64 Z" fill="#b3afc5"/>
+    <path d="M98 64 L117 76 L110 64 Z" fill="#a29ebc"/>
+  </g>
+</svg>

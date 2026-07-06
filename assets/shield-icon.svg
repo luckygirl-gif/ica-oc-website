@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- 3D-style shield, navy border, lavender/white halves -->
+  <defs>
+    <clipPath id="shieldLeft"><rect x="0" y="0" width="60" height="120"/></clipPath>
+  </defs>
+  <path id="sh" d="M60 12 C48 21 33 25.5 20 26.5 C17 55 25 88 60 108 C95 88 103 55 100 26.5 C87 25.5 72 21 60 12 Z" fill="#fdfdfe"/>
+  <path d="M60 12 C48 21 33 25.5 20 26.5 C17 55 25 88 60 108 C95 88 103 55 100 26.5 C87 25.5 72 21 60 12 Z" fill="#a6a2ba" clip-path="url(#shieldLeft)"/>
+  <path d="M60 12 C48 21 33 25.5 20 26.5 C17 55 25 88 60 108 C95 88 103 55 100 26.5 C87 25.5 72 21 60 12 Z" fill="none" stroke="#272a7a" stroke-width="11" stroke-linejoin="round"/>
+  <path d="M90 39 C91 57 86 73 74 86" fill="none" stroke="#c9c6d5" stroke-width="4" stroke-linecap="round"/>
+</svg>
