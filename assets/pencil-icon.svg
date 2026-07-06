@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
-  <!-- 3D-style pencil, periwinkle body, lilac eraser, light-blue ferrule -->
+  <!-- 3D-style pencil: slate-navy body, gray eraser, pale-blue ferrule, cream wood -->
   <g transform="rotate(40 60 53)">
-    <rect x="48" y="10" width="24" height="16" rx="8" fill="#cbaee6"/>
-    <rect x="47" y="20" width="26" height="11" rx="3" fill="#b5d9f2"/>
-    <rect x="48" y="30" width="24" height="45" fill="#5f66b2"/>
-    <rect x="56.5" y="30" width="7" height="45" fill="#6d74c0"/>
-    <path d="M48 75 L54 71.5 L60 75.5 L66 71.5 L72 75 L60 97 Z" fill="#f7f4ef"/>
-    <path d="M56.3 90 L63.7 90 L60 97 Z" fill="#2e3272"/>
+    <rect x="48" y="8" width="24" height="17" rx="8" fill="#a29aa8"/>
+    <rect x="46.5" y="19" width="27" height="12" rx="4" fill="#dbe9f8"/>
+    <rect x="48" y="29" width="24" height="46" fill="#575b92"/>
+    <rect x="55.5" y="29" width="9" height="46" fill="#6a6ea8"/>
+    <path d="M48 75 L54 71.5 L60 75.5 L66 71.5 L72 75 L60 97 Z" fill="#f2ecdf"/>
+    <path d="M56.3 90 L63.7 90 L60 97 Z" fill="#33366e"/>
   </g>
 </svg>

@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
-  <!-- 3D-style puzzle piece, lavender with periwinkle depth edge -->
+  <!-- 3D-style puzzle piece: near-white face, gray-lavender depth edge -->
   <g transform="rotate(-10 60 60)">
-    <path d="M32 32 H52 A8 8 0 1 0 68 32 H88 V52 A8 8 0 1 1 88 68 V88 H68 A8 8 0 1 0 52 88 H32 V68 A8 8 0 1 1 32 52 Z" transform="translate(3.5 5)" fill="#7a80d8"/>
-    <path d="M32 32 H52 A8 8 0 1 0 68 32 H88 V52 A8 8 0 1 1 88 68 V88 H68 A8 8 0 1 0 52 88 H32 V68 A8 8 0 1 1 32 52 Z" fill="#b9b5ee"/>
+    <path d="M32 32 H52 A8 8 0 1 0 68 32 H88 V52 A8 8 0 1 1 88 68 V88 H68 A8 8 0 1 0 52 88 H32 V68 A8 8 0 1 1 32 52 Z" transform="translate(3.5 5)" fill="#b3afd4"/>
+    <path d="M32 32 H52 A8 8 0 1 0 68 32 H88 V52 A8 8 0 1 1 88 68 V88 H68 A8 8 0 1 0 52 88 H32 V68 A8 8 0 1 1 32 52 Z" fill="#e7e9f7"/>
   </g>
 </svg>
