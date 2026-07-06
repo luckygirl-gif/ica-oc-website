@@ -35,8 +35,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,249,247,.9);backdrop
 .brand img{width:42px;height:42px;border-radius:9px;object-fit:cover}
 .brand b{font-size:1.05rem;letter-spacing:.02em}
 .brand span{display:block;font-size:.66rem;letter-spacing:.14em;color:var(--mauve);text-transform:uppercase;font-weight:600}
-.nav .brand > span{display:flex;align-items:baseline;gap:7px}
-.nav .brand span span{display:inline;font-size:.58rem;color:var(--coral-deep);white-space:nowrap}
+.brand > span{display:flex;align-items:baseline;gap:7px}
+.brand span span{display:inline;font-size:.58rem;color:var(--coral-deep);white-space:nowrap}
 @media(max-width:600px){.nav .brand > span{display:block}.nav .brand span span{display:block}}
 .nav-links{display:flex;align-items:center;gap:28px}
 .nav-links a{font-size:.92rem;font-weight:500;color:var(--ink);opacity:.78;transition:opacity .2s,color .2s}
@@ -141,7 +141,6 @@ html[data-lang="ko"] .value .quote{font-style:normal;font-family:var(--font);col
 footer{background:var(--white);border-top:1px solid rgba(39,42,122,.1);color:var(--muted);padding:calc(8px + 32px*var(--fit)) 0;font-size:.85rem}
 .foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
 .foot .brand b{color:var(--navy)}
-.foot .brand span{color:var(--mauve)}
 .foot-links{display:flex;gap:20px;flex-wrap:wrap}
 .foot-links a{opacity:.85}
 .foot-links a:hover{opacity:1;color:var(--navy)}
