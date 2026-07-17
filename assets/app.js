@@ -182,3 +182,23 @@ document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
   window.__icaFit = fit;                       // synchronous refit (used by applyLang & tests)
   fit();
 })();
+
+// ---- GA4 click tracking (every link/button, stable English labels) ----
+document.addEventListener('click', function(e){
+  if(typeof gtag !== 'function') return;
+  var el = e.target.closest ? e.target.closest('a,button') : null;
+  if(!el) return;
+  var labeled = el.querySelector ? el.querySelector('[data-en]') : null;
+  var label = el.getAttribute('data-ga')
+    || el.getAttribute('data-en')
+    || (labeled && labeled.getAttribute('data-en'))
+    || (el.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 60)
+    || el.getAttribute('aria-label')
+    || el.href || 'unknown';
+  gtag('event', 'ui_click', {
+    click_label: label,
+    click_href: el.href || '',
+    page_path: location.pathname,
+    site_lang: document.body.getAttribute('data-lang') || 'en'
+  });
+}, true);
